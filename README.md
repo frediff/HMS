@@ -8,7 +8,7 @@
 
 #### System Description
 
-This project is a web application for a hospital management system. The system registers patients, schedules appointments with doctors, maintains patient information about diagnostics tests and treatments, maintains information about doctors/healthcare professionals, and stores admit/discharge information about the patients.
+<p align="justify">This project is a web application for a hospital management system. The system registers patients, schedules appointments with doctors, maintains patient information about diagnostics tests and treatments, maintains information about doctors/healthcare professionals, and stores admit/discharge information about the patients.</p>
 
 #### Intended users
 
@@ -23,19 +23,19 @@ The system supports the following workflow:
 
 > ###### Patient registration/discharge and doctor appointment/test scheduling
 >
-> Information about new patients can be registered. One can schedule appointments based on availability and priority. Furthermore, it notifies doctors about the appointments in a dashboard. Assignment of rooms for admitted patients is done based on available room capacity. The system preserves information about discharged patients. Nevertheless, it updates the room occupancy accordingly. The workflow also supports scheduling tests and treatments prescribed by doctors.
+> <p align="justify">Information about new patients can be registered. One can schedule appointments based on availability and priority. Furthermore, it notifies doctors about the appointments in a dashboard. Assignment of rooms for admitted patients is done based on available room capacity. The system preserves information about discharged patients. Nevertheless, it updates the room occupancy accordingly. The workflow also supports scheduling tests and treatments prescribed by doctors.</p>
 
 > ###### Patient data entry
 >
-> All a patient's health information, including test results and treatments administered, can be recorded.
+> <p align="justify">All a patient's health information, including test results and treatments administered, can be recorded.</p>
 
 > ###### Doctor dashboard
 >
-> The application displays all the records of patients a doctor treats on a dashboard. Doctors may also query for any patient information. The doctor should be able to record drugs/treatments prescribed to a patient. Operators can send automated email reports to a doctor about the health information of patients treated by him/her every week. Emailing high-priority events is done in an emergency manner.
+> <p align="justify">The application displays all the records of patients a doctor treats on a dashboard. Doctors may also query for any patient information. The doctor should be able to record drugs/treatments prescribed to a patient. Operators can send automated email reports to a doctor about the health information of patients treated by him/her every week. Emailing high-priority events is done in an emergency manner.</p>
 
 > ###### Database Administration
 >
-> Will be able to add/delete new users. A data security policy is present with suitable access control.
+> <p align="justify">Will be able to add/delete new users. A data security policy is present with suitable access control.</p>
 
 #### Tech Stack
 
