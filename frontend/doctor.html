@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+
+		<title>Hospital Management System - Doctor</title>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IM+Fell+English&family=Nanum+Myeongjo:wght@700&family=Inter&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ovo&family=Vollkorn:wght@500&family=Zen+Antique&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body>
+		<div style = " margin: 0px; height: 70px; background: #db3e04; border-radius: 10px">
+			<br>
+			<div style = "color: white; font-size: 25px; font-family: Inter; padding-left: 20px; float: left"><a href = "index.html" style = "text-decoration:none"><a href = "index.html" style = "text-decoration:none; color:white;">Hospital Management System</a></div>
+			<div id = "doctor-name" style = "color: white; font-size: 25px; font-family: Inter; padding-right: 30px; float: right;" align = right>Welcome,</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<hr color = #58287F style="margin: 10px">
+		<br>
+		<br>
+		
+		<div id = round_box style="backdrop-filter: blur(10px); border-radius: 10px; background-color: rgba(219, 62, 4, 0.2); width: 1200px">
+			<table align = center>
+				<tr border = 1px>
+					<td align = center style = "font-size: 25px; font-family: 'Inter'; padding: 20px; width: 550px" onClick = 'scrollToPatient()'>Manage Patients</td>
+					<td align = center style = "font-size: 25px; font-family: 'Inter'; padding: 20px; width: 550px" onClick = 'scrollToAppointment()'>Manage Appointment</td>
+				</tr>
+			</table>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<hr color = #58287F style="margin: 10px">
+		<br>
+		<br>
+		<table align = center style = "width: 100%">
+			<tr align = "center"><td>
+			<div style="float: left">
+				<p style ="padding-left: 20px; color: #db3e04; font-size: 23px; font-family: Inter;"><b>Ask for patient information</b></p>
+				<form onkeydown="return event.key != 'Enter';" style = "font-size: 23px; font-family: 'Inter'; padding-left: 20px;" id = "patient-form">
+				<br>
+				<table>
+					<tr>
+						<td valign = center>
+							<label for = "PID" style = "float: left; margin-right: 10px; margin-top: 5px">
+								<span class = "badge" style = "background-color: #db3e04; color: white; padding: 12px; margin-top: 0px; ">
+									Patient ID:
+								</span>
+							</label>
+							<input type = "number" name = "PID" id = "PID" style = "margin-top: 0px; font-size: 23px; font-family: 'Inter'; border-radius: 10px; float: left;">
+						</td>
+						<td>
+							<div class = "buttonFF" style = "margin-top: 2px; background: #db3e04; font-family: 'Inter'; color: white; font-size:23px; height: 30px; padding: 10px; width:120px; float: left;" onclick="FetchPatient()">
+								<span>Search</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			</div>
+
+			</td align = "center"><td>
+
+			<table style="border-radius: 10px; overflow: hidden; width: 100%; float :right;" align="right" id = "patients-treated-table">
+				<caption style = "padding: 10px; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.7); font-family: Inter; font-size: 25px; color: #db3e04;">
+						<b>Patients Treated</b>
+				</caption>
+				<tr>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white ">
+						Remedy ID
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Name
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Patient ID
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Date
+					</th>
+				</tr>
+				<tbody id = "patients-treated-table-interior">
+				<!-- <tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				</tr>
+					<tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				</tr>
+					<tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				 </tr> -->
+			</tbody>
+			</table>
+			</td></tr>
+		</table>
+
+		<br>
+		<hr color = #db3e04>
+		<br>
+
+		<div id = round_box_noblur style="backdrop-filter: blur(10px); border-radius: 10px; background-color: rgba(252, 226, 42, 0.7)">
+			<p id = 'patient-info' style="padding: 20px; color: #db3e04; font-size: 25px; font-family: 'Inter';">No Patient Selected</p>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<hr color = #db3e04>
+		<br>
+		
+		<table style="border-radius: 10px; overflow: hidden; width: 70%; " align="center" id = "doctor-appointments-table">
+				<caption style = "padding: 10px; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.7); font-family: Inter; font-size: 25px; color: #db3e04;">
+						<b>Pending Appointments</b>
+				</caption>
+				<tr>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white ">
+						Appointment ID
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Patient Name
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Patient ID
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Date
+					</th>
+					<th valign="center" align="center" style= "font-family: Inter; font-size: 22px; color: white;">
+						Mark Done
+					</th>
+				</tr>
+				<tbody id = "doctor-appointments-table-interior">
+				<!-- <tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				</tr>
+					<tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				</tr>
+					<tr>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+					<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+				 </tr> -->
+			</tbody>
+			</table>
+
+		<!-- <p id = 'patient-info' style="padding-left: 20px; color: #D61355; font-size: 23px; font-family: 'Inter';">No Patient Selected</p> -->
+
+
+
+		<script type = "text/javascript" src = "./doctor.js"></script>
+	</body>
+</html>

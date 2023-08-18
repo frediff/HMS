@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+		<title>Hospital Management System - Sign In</title>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IM+Fell+English&family=Nanum+Myeongjo:wght@700&family=Inter&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ovo&family=Vollkorn:wght@500&family=Zen+Antique&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body>
+
+		<br><br>
+		<div id = round_box align = "center" style = "border: 6px solid #2E3840;">
+			<h1 align = "center" style = "color:#2E3840; font-size:40px; font-family: 'Inter'"><a href = "index.html" style = "text-decoration:none; color:#2E3840;">Hospital Management System</a></h1>
+		</div>
+
+
+
+		<div id = round_box style = "margin-top: 7%; margin-bottom: 7%; background-color: rgba(58, 152, 185, 0.1);" align = "center">
+			<h2 align = "center" style = "color:#000055; font-size: 30px; font-family: 'Inter'">
+				<span class="badge">Sign In</span>
+			</h2>
+				<div>
+					<form style = "font-size: 20px; font-family: 'Inter'" id = signin>
+						<br>
+						<table>
+							<tr>
+								<td><label for = "EID"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Employee ID:</span></label></td>
+								<td><input type = "number" name = "EID" id = "EID" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+							<tr>
+								<td><label for = "password"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Password:</span></label></td>
+								<td><input type = "password" name = "password" id = "password" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+						</table>
+						<br><br>
+						<p id = 'credential-prompt' style = "color: red; font-size :15px; font-family : 'Inter'" align = "center"></p>
+					</form>
+				</div>
+				<button class="buttonAC" style = "font-family: 'Inter'; font-size:17px; padding: 10px; border-radius: 10px" onclick="SignIn()"><span><b>Next</b></span></button>
+			<p align = "center" style="color: navy; font-size : 15px; font-family: 'Inter'">Not a registered user? Contact Administrator.</p>
+		</div>
+
+		<div id = round_box align = "center" style = "border: 2px solid #2E3840;">
+			<p align = "center" style = "color:#2E3840; font-size:20px; font-family: 'Inter'">Contributers:</p>
+			<div align = center style = "width:330px">
+				<ul align = "left">
+					<li style = "color:#2E3840; font-size:20px; font-family: 'Inter'"> Aritra Mitra (20CS30006)
+					<li style = "color:#2E3840; font-size:20px; font-family: 'Inter'"> Subham Ghosh (20CS10065)
+					<li style = "color:#2E3840; font-size:20px; font-family: 'Inter'"> Anubhav Dhar (20CS30004)
+
+				</ul>
+			</div>
+
+		</div>
+
+		<script type = "text/javascript" src = "./login.js"></script>
+	</body>
+</html>

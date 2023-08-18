@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+
+		<title>Hospital Management System - Doctor</title>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IM+Fell+English&family=Nanum+Myeongjo:wght@700&family=Inter&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ovo&family=Vollkorn:wght@500&family=Zen+Antique&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body bgcolor = #AEBDCA>
+		<div style = " margin: 0px; height: 70px; background: #3A1078; border-radius: 10px">
+			<br>
+			<div style = "color: white; font-size: 25px; font-family: Inter; padding-left: 20px; float: left"><a href = "index.html" style = "text-decoration:none; color:white;">Hospital Management System</a></div>
+			<div id = "data_entry-name" style = "color: white; font-size: 25px; font-family: Inter; padding-right: 30px; float: right;" align = right>Welcome,</div>
+		</div>
+
+		<br>
+		<!-- <p style ="padding-left: 20px; color: #D61355; font-size: 23px; font-family: Inter;"><b>Ask for patient information</b></p>
+		<form style = "font-size: 23px; font-family: 'Inter'; padding-left: 20px" id = "patient-form">
+			<br>
+			<label for = "PID" style = "float: left; margin-right:5px; margin-top: 8px;">Patient ID:</label>
+			<input type = "number" name = "PID" id = "PID" style = "font-size: 23px; font-family: 'Inter'; border-radius: 10px; float: left; margin-top: 5px">
+			<div style = "border: 2px solid white; margin-left: 10px; background: #F94A29; font-family: 'Inter'; color: white; font-size:23px; width:75px; padding: 10px; border-radius: 10px; float: left;" onclick="FetchPatient()" align = center>Search</div>
+		</form> -->
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id = round_box style="backdrop-filter: blur(10px); border-radius: 10px; background-color: rgba(58, 16, 120, 0.3); width: 1000px">
+			<form style = "font-size: 20px; font-family: 'Inter'" id = 'test-form'>
+				<table align = center>
+					<tr>
+						<td align = right valign = center>
+							<label for = "PID"><span class="badge" style = "background-color: #55f255; color: black; padding: 10px;">Patient ID:</span></label>
+						</td>
+						<td align = center valign = center>
+							<input type = "number" name = "PID" id = "PID" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px">
+						</td>
+					</tr>
+					<tr>
+						<td align = right valign = center>
+							<label for = "EID"><span class="badge" style = "background-color: #55f255; color: black; padding: 10px;">Doctor in Charge (ID):</span></label>
+						</td>
+						<td align = center valign = center>
+							<input type = "number" name = "EID" id = "EID" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px">
+						</td>
+					</tr>
+					<!-- <tr>
+						<td align = right valign = center>
+							<label for = "date"><span class="badge" style = "background-color: #55f255; color: black; padding: 10px; width : 1000px">Date:</span></label>
+						</td>
+						<td align = center valign = center>
+							<input type = "date" name = "date" id = "date" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px">
+						</td>
+					</tr> -->
+					<tr>
+						<td align = right valign = center>
+							<label for = "type"><span class="badge" style = "background-color: #55f255; color: black; padding: 10px;">Type of Test:</span></label>
+						</td>
+						<td align = center valign = center>
+							<input type = "text" name = "type" id = "type" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px">
+						</td>
+					</tr>
+
+					<tr>
+						<td align = right valign = center>
+							<label for = "report"><span class="badge" style = "background-color: #55f255; color: black; padding: 10px;">Report:</span></label>
+						</td>
+						<td align = center valign = center>
+							<input type = "file" name = "report" id = "report" style = "font-size: 17px; font-family: 'Inter'; border-radius: 10px"></textarea>
+						</td>
+					</tr>
+				</table>
+				<table align = center>
+					<tr align = center>
+						<td align = center>
+							<div class = "buttonFF" style = "background: rgb(58, 16, 120); font-family: 'Inter'; color: white; font-size:23px; margin-top: 5px; height: 30px; padding: 10px; width:300px;" onclick="addTest()" align = center>
+								<span>Add Test Information</span>
+							</div>
+						</td>
+						<td align = center>
+							<div class = "buttonFF" style = "background: rgb(58, 16, 120); font-family: 'Inter'; color: white; font-size:23px; margin-top: 5px; height: 30px; padding: 10px; width:300px;" onclick="sendEmail()" align = center>
+								<span>Send Email To Doctor</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<!-- <p id = 'patient-info' style="padding-left: 20px; color: #D61355; font-size: 23px; font-family: 'Inter';">No Patient Selected</p> -->
+
+		<script type = "text/javascript" src = "./data_entry.js"></script>
+		<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+	</body>
+</html>

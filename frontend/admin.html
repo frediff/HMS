@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+
+		<title>Hospital Management System - Doctor</title>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IM+Fell+English&family=Nanum+Myeongjo:wght@700&family=Inter&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ovo&family=Vollkorn:wght@500&family=Zen+Antique&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+	<body bgcolor = #BFDB38>
+		<div style = " margin: 0px; height: 70px; background: #076307; border-radius: 10px">
+			<br>
+			<div style = "color: white; font-size: 25px; font-family: Inter; padding-left: 20px; float: left"><a href = "index.html" style = "text-decoration:none; color:white;">Hospital Management System</a></div>
+			<div id = "admin-name" style = "color: white; font-size: 25px; font-family: Inter; padding-right: 30px; float: right;" align = right>Welcome,</div>
+		</div>
+
+		<br>
+		<!-- <p style ="padding-left: 20px; color: #D61355; font-size: 23px; font-family: Inter;"><b>Ask for patient information</b></p>
+		<form style = "font-size: 23px; font-family: 'Inter'; padding-left: 20px" id = "patient-form">
+			<br>
+			<label for = "PID" style = "float: left; margin-right:5px; margin-top: 8px;">Patient ID:</label>
+			<input type = "number" name = "PID" id = "PID" style = "font-size: 23px; font-family: 'Inter'; border-radius: 10px; float: left; margin-top: 5px">
+			<div style = "border: 2px solid white; margin-left: 10px; background: #F94A29; font-family: 'Inter'; color: white; font-size:23px; width:75px; padding: 10px; border-radius: 10px; float: left;" onclick="FetchPatient()" align = center>Search</div>
+		</form> -->
+
+		<br>
+		<br>
+		<br>
+		<hr color = #076307 style="margin: 10px; padding: 2px">
+		<br>
+
+		<table style="overflow: hidden; border-radius: 10px" align="center" id = "users-table">
+			<caption style = "padding: 10px; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.7); font-family: Inter; font-size: 25px; color: #076307;">
+					<b>Existing Users</b>
+			</caption>
+			<tr>
+				<th valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 300px">
+					Employee ID
+				</th>
+				<th valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 300px">
+					Name
+				</th>
+				<th valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 300px">
+					Email
+				</th>
+				<th valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 300px">
+					Role
+				</th>
+				<th valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 300px">
+					Delete
+				</th>
+			</tr>
+			<tbody id = 'users-table-interior'>
+			<!--<tr>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+			</tr>
+			<tr>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+			</tr>
+			<tr>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">robin</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">123</td>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 22px">12/34/56</td>
+			</tr> -->
+		</tbody>
+		</table>
+
+		<!-- <p id = 'patient-info' style="padding-left: 20px; color: #D61355; font-size: 23px; font-family: 'Inter';">No Patient Selected</p> -->
+
+		<br>
+		<br>
+		<br>
+		<hr color = #076307 style="margin: 10px; padding: 2px">
+		<br>
+
+		<table style="backdrop-filter: blur(20px); background-color:rgba(191, 219, 56, 0.5); border-radius: 10px" align="center">
+			<tr>
+				<td valign="center" align="center" style= "font-family: Inter; font-size: 25px; width: 1000px" colspan="2">
+					<span class = "badge" style = "background-color: #076307;"><b>Add New User</b></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<form style = "font-size: 20px; font-family: 'Inter'" id = 'add-user'>
+						<br>
+						<table>
+							<tr>
+								<td><label for = "EID"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Employee ID:</span></label></td>
+								<td>
+									<p id = "EID" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px; margin-left: 7px"></p>
+									<!-- <input type = "number" name = "EID" id = "EID" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"> -->
+								</td>
+							</tr>
+							<tr>
+								<td><label for = "name"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Name:</span></label></td>
+								<td><input type = "text" name = "name" id = "name" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+							<tr>
+								<td><label for = "role"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Role:</span></label></td>
+								<td>
+									<select id = "role" name = "role" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px">
+										<option value="doctor">Doctor</option>
+										<option value="front_desk">Front Desk Operator</option>
+										<option value="data_entry">Data Entry Operator</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><label for = "password"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Password:</span></label></td>
+								<td><input type = "password" name = "password" id = "password" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+
+							<tr>
+								<td><label for = "password2"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Confirm Password:</span></label></td>
+								<td><input type = "password" name = "password2" id = "password2" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+
+							<tr>
+								<td><label for = "email"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Email (optional):</span></label></td>
+								<td><input type = "text" name = "email" id = "email" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+
+							<tr>
+								<td colspan = 2><hr style = "padding: 2px"><p align = center><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px; font-size: 20px">If doctor</span></p></td>
+							</tr>
+							<tr>
+								<td><label for = "availability"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Availability:</span></label></td>
+								<td>
+									<div class="hiddenCB">
+									<div>
+    								<input type="checkbox" name="availability" id="availability-mon"/><label for="availability-mon"><b>Mon</b></label>
+    								<input type="checkbox" name="availability" id="availability-tue"/><label for="availability-tue"><b>Tue</b></label>
+    								<input type="checkbox" name="availability" id="availability-wed"/><label for="availability-wed"><b>Wed</b></label>
+    								<input type="checkbox" name="availability" id="availability-thu"/><label for="availability-thu"><b>Thu</b></label>
+										<input type="checkbox" name="availability" id="availability-fri"/><label for="availability-fri"><b>Fri</b></label>
+										<input type="checkbox" name="availability" id="availability-sat"/><label for="availability-sat"><b>Sat</b></label>
+										<input type="checkbox" name="availability" id="availability-sun"/><label for="availability-sun"><b>Sun</b></label>
+  								</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><label for = "chamber"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Chamber Number:</span></label></td>
+								<td><input type = "number" placeholder="0" name = "chamber" id = "chamber" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+							<tr>
+								<td><label for = "spz"><span class="badge" style = "background-color: #FFD24C; color: black; padding: 10px;">Specialization:</span></label></td>
+								<td><input type = "text" name = "spz" id = "spz" style = "font-size: 20px; font-family: 'Inter'; border-radius: 10px"></td>
+							</tr>
+						</table>
+						<br><br>
+					</form>
+				</td>
+				<td valign = "center">
+					<div class = "buttonFF" style = "background: #076307; font-family: 'Inter'; color: white; font-size:23px; margin-top: 5px; height: 30px; padding: 10px; width:150px; float: left;" onclick="addUser()">
+						<span>Add User</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+
+		<script type = "text/javascript" src = "./admin.js"></script>
+	</body>
+</html>
